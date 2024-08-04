@@ -11,7 +11,7 @@ Quand on éxecute le programme on a le choix de la taille de la spirale ainsi qu
 - Écrire les nombres et colorier en jaune les nombres premiers (peu pratique pour de grandes tailles de spirale).
 - Mettre des astérix colorié en jaune pour les nombres premiers et des points pour les non premiers (très jolies).
 ![image](https://github.com/user-attachments/assets/f025197d-1dfe-4d0c-937b-8f5065b323b2)
-
+Spirale d'Ulam de taille 99*99
 ## Ce que ce projet m'a apporté
 
 Grâce à ce projet j'ai appris à colorié du texte dans le terminal pour un utilisateur Linux et pour un utilisateur Windows.
