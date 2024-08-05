@@ -106,7 +106,7 @@ void afficher_mat_nb(int n, int mat[n][n]){
     }
 }
 
-//Affiche une matrice de taille n*n (avec des astérix)
+//Affiche une matrice de taille n*n (avec des astérisque)
 void afficher_mat_ast(int n, int mat[n][n]){
     bool premier;
     for(int i=0; i<n; i++){
@@ -139,7 +139,7 @@ int main(){
     scanf("%d", &taille);
     printf("Quelle affichage voulez vous ?\n");
     printf("1. Avec des nombres (Il y a un décalage qui fait que pour les grands nombres, c'est illisible).\n");
-    printf("2. Avec des astérix et des points.\n");
+    printf("2. Avec des astérisque et des points.\n");
     printf("Ecrivez n'importe quoi d'autre pour partir\n");
     scanf("%d", &choix);
     int matrice[taille][taille];
