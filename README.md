@@ -20,7 +20,7 @@ Ce programme est disponible en deux versions, une pour Windows et une pour Linux
 Quand on éxecute le programme on a le choix de la taille de la spirale ainsi que deux options:
 
 - Écrire les nombres et colorier en jaune les nombres premiers (peu pratique pour de grandes tailles de spirale).
-- Mettre des astérix colorié en jaune pour les nombres premiers et des points pour les non premiers (très jolies).
+- Mettre des astérisque colorié en jaune pour les nombres premiers et des points pour les non premiers (très jolies).
 
 > [!NOTE]
 > Le 1 sera toujours colorié en rouge, bien que 1 n'est pas premier.
@@ -36,7 +36,7 @@ Quand on éxecute le programme on a le choix de la taille de la spirale ainsi qu
 
 ![image](https://github.com/user-attachments/assets/7c6175c8-2a86-4eee-b551-7a4d99031813)
 
-*Spirale d'Ulam de taille 100x100 avec astérix*
+*Spirale d'Ulam de taille 100x100 avec astérisque*
 
 ## Ce que ce projet m'a apporté
 
