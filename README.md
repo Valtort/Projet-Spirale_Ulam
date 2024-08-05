@@ -27,12 +27,15 @@ Quand on éxecute le programme on a le choix de la taille de la spirale ainsi qu
 
 # Exemples
 ![image](https://github.com/user-attachments/assets/fd60dc7e-4138-4af2-9949-ea542883e201)
+
 *Spirale d'Ulam de taille 2x2 avec chiffres*
 
 ![image](https://github.com/user-attachments/assets/02172b5b-7edf-417a-aa11-4aaaedab2949)
+
 *Spirale d'Ulam de taille 3x3 avec chiffres*
 
 ![image](https://github.com/user-attachments/assets/7c6175c8-2a86-4eee-b551-7a4d99031813)
+
 *Spirale d'Ulam de taille 100x100 avec astérix*
 
 ## Ce que ce projet m'a apporté
