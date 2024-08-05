@@ -34,26 +34,50 @@ bool est_premier(int n){
 }
 
 //Remplit une matrice de taille : n*n de manière a avoir une spirale de nombres
-void genererSpirale(int n, int mat[n][n]){
-    int x = n/2; 
-    int y = n/2; // On place x et y au centre de la spirale
-    int deplace_x = 0; 
-    int deplace_y = -1; // Car pour le second "mouvement", on remonte de 1
-    for(int i=1; i<=(n*n);i++){
-        mat[x][y]=i;
-        if((x == y) || ((x<y) && (x+y == (n-1))) || ((x>y) && (x+y == n))){
-            // Il s'agit là des trois conditions pour changer de directions, une seule remplie et c'est le changement de direction
-            // La première correspond à être sur la diagonale qui part d'en haut à gauche de la matrice.
-            // La deuxième et le troisième correspondent à être sur la diagionale qui part d'en bas à gauche.
-            // La deuxième est pour quand on est en dessous du 1 (du centre) et la troisième pour quand on est au dessus.
-            int sauv = deplace_x;
-            deplace_x = -deplace_y;
-            deplace_y = sauv;
-        }
-        x = x + deplace_x;
-        y = y + deplace_y;
+void genererSpirale(int n, int matrice[n][n]) {
+    int x = n / 2;
+    int y = n / 2;
+    //Pour éviter les segmentation fault lorsque l'on entre des nombres pairs
+    if(n%2==0){
+        x--;
     }
-    
+    int dx; // Deplacement de x
+    int dy; // Deplacement de y
+    int compteur_sens=-1; // compteur qui indique le prochain sens
+    // 0 : droite, 1 : haut, 2: gauche, 3: bas
+    int compteur_boucle=0; // Compte le nombre de passage dans la boucle MAIS se remet à 0 parfois
+    int j=0;
+    for (int i = 1; i <= n*n; i++) { 
+        dx=0;
+        dy=0;
+        // sert à pouvoir faire 1 droite, 1 haut puis 2 gauche, 2 bas, 3 droite, 3 haut etc...
+        if(compteur_boucle==(j+1)/2){ 
+            j++;
+            compteur_boucle=0;
+            compteur_sens++;
+        }
+        
+        matrice[x][y] = i;
+        if(compteur_sens==0){ // Va vers la droite
+            dx = 1;
+        }
+        if(compteur_sens==1){ // Va vers le haut
+            dy = -1;
+        }
+        if(compteur_sens==2){ // Va vers la gauche
+            dx = -1;
+        }
+        if(compteur_sens==3){ // Va vers le bas
+            dy = 1;
+        }
+        if(compteur_sens==4){
+            dx = 1;
+            compteur_sens=0;
+        }
+        compteur_boucle++;
+        x+=dx;
+        y+=dy;
+    }
 }
 
 //Affiche une matrice de taille n*n (avec des nombres)
@@ -68,7 +92,14 @@ void afficher_mat_nb(int n, int mat[n][n]){
                 setColor(7, 0);
             }
             else{
-                printf("[%d] ", mat[j][i]);
+                if(mat[j][i]==1){
+                    setColor(4, 0); //1 n'est pas premier mais sera représenté par un nombre rouge pour le démarquer
+                    printf("[%d] ", mat[j][i]);
+                    setColor(7, 0);
+                }   
+                else{
+                    printf(". ");
+                }
             }
         }
         printf("\n");
@@ -87,7 +118,14 @@ void afficher_mat_ast(int n, int mat[n][n]){
                 setColor(7, 0);
             }
             else{
-                printf(". ");
+                if(mat[j][i]==1){
+                    setColor(4, 0); //1 n'est pas premier mais sera représenté par une étoile rouge pour le démarquer
+                    printf("* ");
+                    setColor(7, 0);
+                }   
+                else{
+                    printf(". ");
+                }
             }
         }
         printf("\n");
