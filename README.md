@@ -42,3 +42,16 @@ Quand on éxecute le programme on a le choix de la taille de la spirale ainsi qu
 
 Grâce à ce projet j'ai appris à colorié du texte dans le terminal pour un utilisateur Linux et pour un utilisateur Windows.
 J'ai également appris à afficher des spirales de nombres en partant du centre.
+
+## Difficultés rencontrées
+
+La première difficulté que j’ai rencontrée était de devoir distinguer le cas d’une taille paire et d’une taille impaire. En effet, le “centre” de la spirale se décale en fonction de la parité de la taille. Une simple disjonction de cas ainsi que des tests faits sur papier ont permis de vaincre cette difficulté.
+
+La seconde difficulté était de devoir tracer la spirale en partant du centre et en tournant dans le sens anti-horaire. Pour venir à bout de celle-ci, j’ai remarqué qu’on faisait des mouvements du type : 1 droite, 1 haut, 2 gauche, 2 bas, 3 droite, 3 haut, etc.
+
+J’ai donc créé un compteur, compteur_boucle, celui-ci est remis à zéro à chaque fois que l’on passe 1 fois dans la boucle qui crée la spirale, puis à chaque fois que l’on passe 1 fois, puis à chaque fois que l’on passe 2 fois, etc.
+
+Cela permet donc d’avoir un compteur_boucle qui nous indique le nombre de fois où l’on doit aller dans la même direction.
+
+De plus, à chaque fois que ce compteur est remis à zéro, on incrémente compteur_sens de 1. Celui-ci dicte le sens dans lequel on doit aller et il est remis à zéro à chaque fois que compteur_sens atteint 4. (Pour compteur_sens : 0 correspond à droite, 1 à haut, 2 à gauche, 3 à bas)
+
